@@ -18,5 +18,14 @@ namespace Dojo
             Assert.That(result.Count, Is.EqualTo(0));
 
         }
+
+        [Test]
+        public void GetAllMuations_WithoutValidMutation_ReturnsEmptyResult()
+        {
+            MutationFinder finder = new MutationFinder();
+            List<string> result = finder.GetAllMutations("cat", new List<string> { "hello", "eins" });
+
+            Assert.That(result.Count, Is.EqualTo(0));
+        }
     }
 }
