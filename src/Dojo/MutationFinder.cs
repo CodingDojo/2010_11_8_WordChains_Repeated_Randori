@@ -17,8 +17,7 @@ namespace Dojo
 
         internal List<string> GetAllMutations(string p, List<string> list)
         {
-            checker.IsMutation("aa", "bb");
-            return list;
+            return list.Where(s => checker.IsMutation(p, s)).ToList();
         }
     }
 }
