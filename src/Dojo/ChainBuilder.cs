@@ -7,11 +7,33 @@ namespace Dojo
 {
     class ChainBuilder
     {
+        private MutationFinder finder = new MutationFinder(new MutationChecker());
 
-        internal IList<string> Build(string p, string p_2, List<string> list)
+        internal IList<string> Build(string start, string end, List<string> list)
         {
+            var availableMutations = finder.GetAllMutations(start, list);
 
-            return new List<string>() { "cat", "dog"};
+            if (availableMutations.Contains(end))
+            {
+                return new List<string>() { start, end };
+            }
+
+            foreach (string mutation in availableMutations)
+            {
+              
+
+                var result = Build(mutation, end, list);
+                if (result.Any())
+                {
+                    List<string> chain = new List<string>(){start};
+                    chain.AddRange(result);
+                    return chain;
+                }
+            }
+
+            return new List<string>();
+
+
         }
     }
 }
