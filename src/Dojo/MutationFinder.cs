@@ -7,6 +7,13 @@ namespace Dojo
 {
     class MutationFinder
     {
+        private MutationCheckerAlwaysFalse checker;
+
+        public MutationFinder(MutationCheckerAlwaysFalse checker)
+        {
+            // TODO: Complete member initialization
+            this.checker = checker;
+        }
         internal List<string> GetAllMutations(string p, List<string> list)
         {
             return new List<string>();

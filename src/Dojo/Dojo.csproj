@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="IMutaionChecker.cs" />
     <Compile Include="MutationCheckerTest.cs" />
     <Compile Include="MutaionChecker.cs" />
     <Compile Include="MutationFinder.cs" />

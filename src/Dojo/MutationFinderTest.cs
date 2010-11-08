@@ -12,7 +12,7 @@ namespace Dojo
         [Test]
         public void GetAllMutations_EmptyDictionary_ReturnsEmptyResult()
         {
-            MutationFinder finder = new MutationFinder();
+            MutationFinder finder = new MutationFinder(null);
             List<string> result = finder.GetAllMutations("", new List<string>());
 
             Assert.That(result.Count, Is.EqualTo(0));
@@ -20,12 +20,14 @@ namespace Dojo
         }
 
         [Test]
-        public void GetAllMuations_NotEmptyDictionary_MutationFinderIsCalledForEachElementInDictionary()
+        public void GetAllMuations_NotEmptyDictionary_MutationCheckerIsCalled()
         {
-            MutationFinder finder = new MutationFinder();
+            var checker = new MutationCheckerAlwaysFalse();
+            MutationFinder finder = new MutationFinder(checker);
+            
             List<string> result = finder.GetAllMutations("cat", new List<string> { "hello", "eins" });
 
-            Assert.That(result.Count, Is.EqualTo(0));
+            Assert.That(checker.WasCalled, Is.True);
         }
     }
 }

@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Dojo
 {
-    class MutaionChecker
+    class MutaionChecker : Dojo.IMutationChecker
     {
-        internal bool IsMutation(string word1, string word2)
+        public bool IsMutation(string word1, string word2)
         {
 
             if (word1.Equals(word2) || word1.Length != word2.Length)
