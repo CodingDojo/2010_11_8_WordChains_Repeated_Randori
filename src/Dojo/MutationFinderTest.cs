@@ -29,5 +29,17 @@ namespace Dojo
 
             Assert.That(checker.WasCalled, Is.True);
         }
+
+        [Test]
+        public void GetAllMutations_ForDictionaryOfValidMutations_ReturnAllElements()
+        {
+            var checker = new MutationCheckerAlwaysTrue();
+            MutationFinder finder = new MutationFinder(checker);
+            var sourceDict = new List<string> { "cot", "bat" };
+            List<string> result = finder.GetAllMutations("cat", sourceDict
+            );
+
+            Assert.That(result.Count, Is.EqualTo(sourceDict.Count));
+        }
     }
 }

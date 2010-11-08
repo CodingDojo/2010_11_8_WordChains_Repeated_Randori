@@ -21,4 +21,23 @@ namespace Dojo
 
         #endregion
     }
+
+    class MutationCheckerAlwaysTrue : IMutationChecker
+    {
+
+
+        #region IMutationChecker Members
+
+
+
+        public bool IsMutation(string word1, string word2)
+        {
+
+            return true;
+        }
+
+        #endregion
+    }
+
+
 }
