@@ -9,7 +9,7 @@ namespace Dojo
     {
         internal bool IsMutation(string p, string p_2)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }
