@@ -40,5 +40,16 @@ namespace Dojo
 
             Assert.That(result.Count, Is.EqualTo(sourceDict.Count));
         }
+
+        [Test]
+        public void GetAllMutations_ForDictionaryOfInValidMutations_ReturnNoElements()
+        {
+            var checker = new MutationCheckerAlwaysFalse();
+            MutationFinder finder = new MutationFinder(checker);
+            var sourceDict = new List<string> { "cot", "bat" };
+            List<string> result = finder.GetAllMutations("cat", sourceDict);
+
+            Assert.That(result.Count, Is.EqualTo(0));
+        }
     }
 }
