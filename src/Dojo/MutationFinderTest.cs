@@ -20,7 +20,7 @@ namespace Dojo
         }
 
         [Test]
-        public void GetAllMuations_WithoutValidMutation_ReturnsEmptyResult()
+        public void GetAllMuations_NotEmptyDictionary_MutationFinderIsCalledForEachElementInDictionary()
         {
             MutationFinder finder = new MutationFinder();
             List<string> result = finder.GetAllMutations("cat", new List<string> { "hello", "eins" });
