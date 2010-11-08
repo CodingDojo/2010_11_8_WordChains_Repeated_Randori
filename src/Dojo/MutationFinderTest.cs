@@ -12,7 +12,7 @@ namespace Dojo
         [Test]
         public void GetAllMutations_EmptyDictionary_ReturnsEmptyResult()
         {
-            MutationFinder finder = new MutationFinder(null);
+            MutationFinder finder = new MutationFinder(new MutationCheckerAlwaysFalse());
             List<string> result = finder.GetAllMutations("", new List<string>());
 
             Assert.That(result.Count, Is.EqualTo(0));
