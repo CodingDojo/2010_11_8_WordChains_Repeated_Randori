@@ -19,10 +19,9 @@ namespace Dojo
             }
 
             foreach (string mutation in availableMutations)
-            {
-              
+            {          
 
-                var result = Build(mutation, end, list);
+                var result = Build(mutation, end, list.Where(s => !s.Equals(start)).ToList());
                 if (result.Any())
                 {
                     List<string> chain = new List<string>(){start};
