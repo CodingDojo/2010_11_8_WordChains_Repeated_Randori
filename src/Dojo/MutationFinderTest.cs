@@ -13,9 +13,9 @@ namespace Dojo
         public void GetAllMutations_EmptyDictionary_ReturnsEmptyResult()
         {
             MutationFinder finder = new MutationFinder(new MutationCheckerAlwaysFalse());
-            List<string> result = finder.GetAllMutations("", new List<string>());
+            IEnumerable<string> result = finder.GetAllMutations("", new List<string>());
 
-            Assert.That(result.Count, Is.EqualTo(0));
+            Assert.That(result.ToList().Count, Is.EqualTo(0));
 
         }
 
@@ -24,8 +24,8 @@ namespace Dojo
         {
             var checker = new MutationCheckerAlwaysFalse();
             MutationFinder finder = new MutationFinder(checker);
-            
-            List<string> result = finder.GetAllMutations("cat", new List<string> { "hello", "eins" });
+
+            IEnumerable<string> result = finder.GetAllMutations("cat", new List<string> { "hello", "eins" });
 
             Assert.That(checker.WasCalled, Is.True);
         }
@@ -36,9 +36,9 @@ namespace Dojo
             var checker = new MutationCheckerAlwaysTrue();
             MutationFinder finder = new MutationFinder(checker);
             var sourceDict = new List<string> { "cot", "bat" };
-            List<string> result = finder.GetAllMutations("cat", sourceDict);
+            IEnumerable<string> result = finder.GetAllMutations("cat", sourceDict);
 
-            Assert.That(result.Count, Is.EqualTo(sourceDict.Count));
+            Assert.That(result.ToList().Count, Is.EqualTo(sourceDict.Count));
         }
 
         [Test]
@@ -47,9 +47,9 @@ namespace Dojo
             var checker = new MutationCheckerAlwaysFalse();
             MutationFinder finder = new MutationFinder(checker);
             var sourceDict = new List<string> { "cot", "bat" };
-            List<string> result = finder.GetAllMutations("cat", sourceDict);
+            IEnumerable<string> result = finder.GetAllMutations("cat", sourceDict);
 
-            Assert.That(result.Count, Is.EqualTo(0));
+            Assert.That(result.ToList().Count, Is.EqualTo(0));
         }
 
         [Test(Description="Integrationtest")]
@@ -58,9 +58,9 @@ namespace Dojo
             var checker = new MutationChecker();
             MutationFinder finder = new MutationFinder(checker);
             var sourceDict = new List<string> { "cot", "bat", "fat", "aaa", "bbb", "ccc", "ddd", "eee", "fff", "xxx" };
-            List<string> result = finder.GetAllMutations("cat", sourceDict);
+            IEnumerable<string> result = finder.GetAllMutations("cat", sourceDict);
 
-            Assert.That(result.Count, Is.EqualTo(3));
+            Assert.That(result.ToList().Count, Is.EqualTo(3));
         }
 
     }

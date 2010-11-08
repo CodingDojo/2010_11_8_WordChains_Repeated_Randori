@@ -14,9 +14,9 @@ namespace Dojo
             this.checker = checker;
         }
 
-        internal List<string> GetAllMutations(string p, IEnumerable<string> list)
+        internal IEnumerable<string> GetAllMutations(string p, IEnumerable<string> list)
         {
-            return list.Where(s => checker.IsMutation(p, s)).ToList();
+            return list.Where(s => checker.IsMutation(p, s));
         }
     }
 }
