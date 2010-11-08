@@ -40,7 +40,7 @@ namespace Dojo
         {
             ChainBuilder builder = new ChainBuilder();
 
-            var result = builder.Build("cat", "cog", new List<string>() { "cat","cog","cot" });
+            var result = builder.Build("cat", "cog", new List<string>() { "cat","cot","cog" });
 
             Assert.That(result[0], Is.EqualTo("cat"));
             Assert.That(result[1], Is.EqualTo("cot"));
