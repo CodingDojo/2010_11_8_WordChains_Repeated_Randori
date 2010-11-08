@@ -30,8 +30,8 @@ namespace Dojo
             var result = builder.Build("cat", "cog", new List<string>() { "cog" });
 
             Assert.That(result[0], Is.EqualTo("cat"));
-            Assert.That(result[0], Is.EqualTo("cot"));
-            Assert.That(result[0], Is.EqualTo("cog"));
+            Assert.That(result[1], Is.EqualTo("cot"));
+            Assert.That(result[2], Is.EqualTo("cog"));
         }
 
     }
