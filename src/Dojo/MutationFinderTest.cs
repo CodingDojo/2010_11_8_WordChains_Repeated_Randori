@@ -16,7 +16,6 @@ namespace Dojo
             List<string> result = finder.GetAllMutations("", new List<string>());
 
             Assert.That(result.Count, Is.EqualTo(0));
-
         }
 
         [Test]
@@ -62,6 +61,5 @@ namespace Dojo
 
             Assert.That(result.Count, Is.EqualTo(3));
         }
-
     }
 }

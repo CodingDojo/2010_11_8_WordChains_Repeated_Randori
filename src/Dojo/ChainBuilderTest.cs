@@ -9,8 +9,6 @@ namespace Dojo
     [TestFixture]
     public class ChainBuilderTest
     {
-
-        
         [Test]
         public void ChainBuilder_ForInmutableWords_ReturnsEmptyChain()
         {
@@ -19,9 +17,7 @@ namespace Dojo
             IList<string> result = chainBuilder.Build("cat","dog", new List<string>());
 
             Assert.That(result.Count, Is.EqualTo(0));
-
         }
-
 
         [Test]
         public void ChainBuilder_DictionaryWithTwoWords_ReturnsValidChain()
@@ -62,7 +58,5 @@ namespace Dojo
             Assert.That(result[4], Is.EqualTo("rode"));
             Assert.That(result[5], Is.EqualTo("code"));
         }
-
-
     }
 }
