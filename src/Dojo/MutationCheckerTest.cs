@@ -18,5 +18,15 @@ namespace Dojo
 
             Assert.That(result, Is.True);
         }
+
+        [Test]
+        public void IsMutation_TwoWordsDifferInLength_ReturnsFalse()
+        {
+            MutaionChecker checker = new MutaionChecker();
+
+            bool result = checker.IsMutation("asdf", "jkl");
+
+            Assert.That(result, Is.False);
+        }
     }
 }
