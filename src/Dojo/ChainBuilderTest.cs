@@ -12,13 +12,13 @@ namespace Dojo
 
         
         [Test]
-        public void ChainBuilder_ForTwoWords_ReturnsChainOfWords()
+        public void ChainBuilder_ForInmutableWords_ReturnsEmptyChain()
         {
             ChainBuilder chainBuilder = new ChainBuilder();
             
             IList<string> result = chainBuilder.Build("cat","dog", new List<string>());
 
-            Assert.That(result.Count, Is.GreaterThan(1));
+            Assert.That(result.Count, Is.EqualTo(0));
 
         }
 
