@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ChainBuilder.cs" />
+    <Compile Include="ChainBuilderTest.cs" />
+    <Compile Include="Fakes.cs" />
     <Compile Include="IMutaionChecker.cs" />
     <Compile Include="MutationCheckerTest.cs" />
     <Compile Include="MutaionChecker.cs" />
