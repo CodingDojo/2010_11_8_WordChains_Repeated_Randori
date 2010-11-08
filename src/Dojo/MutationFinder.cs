@@ -9,7 +9,7 @@ namespace Dojo
     {
         internal List<string> GetAllMutations(string p, List<string> list)
         {
-            throw new NotImplementedException();
+            return new List<string>();
         }
     }
 }
