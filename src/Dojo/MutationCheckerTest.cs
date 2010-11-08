@@ -40,5 +40,15 @@ namespace Dojo
             Assert.That(result, Is.False);
         }
 
+        [Test]
+        public void IsMutation_MoreThanOneCharacterDiffers_ReturnsFalse()
+        {
+            MutaionChecker checker = new MutaionChecker();
+
+            bool result = checker.IsMutation("eins", "eimß");
+
+            Assert.That(result, Is.False);
+        }
+
     }
 }
