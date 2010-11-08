@@ -14,10 +14,11 @@ namespace Dojo
             // TODO: Complete member initialization
             this.checker = checker;
         }
+
         internal List<string> GetAllMutations(string p, List<string> list)
         {
             checker.IsMutation("aa", "bb");
-            return new List<string>();
+            return list;
         }
     }
 }
