@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="MutationCheckerTest.cs" />
     <Compile Include="MutaionChecker.cs" />
+    <Compile Include="MutationFinder.cs" />
+    <Compile Include="MutationFinderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
