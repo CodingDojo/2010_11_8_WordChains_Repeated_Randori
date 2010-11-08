@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Dojo
 {
-    class MutaionChecker : Dojo.IMutationChecker
+    class MutationChecker : Dojo.IMutationChecker
     {
         public bool IsMutation(string word1, string word2)
         {

@@ -12,7 +12,7 @@ namespace Dojo
         [Test]
         public void IsMutation_IsValidMutation_ReturnsTrue()
         {
-            MutaionChecker checker = new MutaionChecker();
+            MutationChecker checker = new MutationChecker();
 
             bool result = checker.IsMutation("cog", "cot");
 
@@ -22,7 +22,7 @@ namespace Dojo
         [Test]
         public void IsMutation_TwoWordsDifferInLength_ReturnsFalse()
         {
-            MutaionChecker checker = new MutaionChecker();
+            MutationChecker checker = new MutationChecker();
 
             bool result = checker.IsMutation("asdf", "jkl");
 
@@ -33,7 +33,7 @@ namespace Dojo
         [Test]
         public void IsMutation_TwoEqualWords_ReturnsFalse()
         {
-            MutaionChecker checker = new MutaionChecker();
+            MutationChecker checker = new MutationChecker();
 
             bool result = checker.IsMutation("eins", "eins");
 
@@ -43,7 +43,7 @@ namespace Dojo
         [Test]
         public void IsMutation_MoreThanOneCharacterDiffers_ReturnsFalse()
         {
-            MutaionChecker checker = new MutaionChecker();
+            MutationChecker checker = new MutationChecker();
 
             bool result = checker.IsMutation("eins", "eimß");
 

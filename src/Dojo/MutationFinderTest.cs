@@ -51,5 +51,17 @@ namespace Dojo
 
             Assert.That(result.Count, Is.EqualTo(0));
         }
+
+        [Test(Description="Integrationtest")]
+        public void GetAllMutations_ForDictionaryWithTenElementsAndThreeValidMutations_ReturnThreeElements()
+        {
+            var checker = new MutationChecker();
+            MutationFinder finder = new MutationFinder(checker);
+            var sourceDict = new List<string> { "cot", "bat", "fat", "aaa", "bbb", "ccc", "ddd", "eee", "fff", "xxx" };
+            List<string> result = finder.GetAllMutations("cat", sourceDict);
+
+            Assert.That(result.Count, Is.EqualTo(3));
+        }
+
     }
 }

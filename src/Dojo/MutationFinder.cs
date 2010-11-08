@@ -11,7 +11,6 @@ namespace Dojo
 
         public MutationFinder(IMutationChecker checker)
         {
-            // TODO: Complete member initialization
             this.checker = checker;
         }
 
