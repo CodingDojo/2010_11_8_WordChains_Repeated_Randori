@@ -28,5 +28,17 @@ namespace Dojo
 
             Assert.That(result, Is.False);
         }
+
+
+        [Test]
+        public void IsMutation_TwoEqualWords_ReturnsFalse()
+        {
+            MutaionChecker checker = new MutaionChecker();
+
+            bool result = checker.IsMutation("eins", "eins");
+
+            Assert.That(result, Is.False);
+        }
+
     }
 }
