@@ -47,6 +47,18 @@ namespace Dojo
             Assert.That(result[2], Is.EqualTo("cog"));
         }
 
+        // (ruby, rubs, robs, rods, rode, code
+        [Test]
+        public void ChainBuilder_DictionaryWithValidChain_ReturnsValidChain()
+        {
+            ChainBuilder builder = new ChainBuilder();
+
+            var result = builder.Build("ruby", "code", new List<string>() { "rubs", "rods", "ruby", "robs", "code", "rope" , "dope", "cate", "chill","rode" });
+
+            Assert.That(result[0], Is.EqualTo("cat"));
+            Assert.That(result[1], Is.EqualTo("cot"));
+            Assert.That(result[2], Is.EqualTo("cog"));
+        }
 
 
     }
