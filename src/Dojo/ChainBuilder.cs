@@ -9,9 +9,9 @@ namespace Dojo
     {
         private MutationFinder finder = new MutationFinder(new MutationChecker());
 
-        internal IList<string> Build(string start, string end, List<string> list)
+        internal IList<string> Build(string start, string end, IEnumerable<string> list)
         {
-            var availableMutations = finder.GetAllMutations(start, list);
+            var availableMutations = finder.GetAllMutations(start, list.ToList());
 
             if (availableMutations.Contains(end))
             {
@@ -19,9 +19,8 @@ namespace Dojo
             }
 
             foreach (string mutation in availableMutations)
-            {          
-
-                var result = Build(mutation, end, list.Where(s => !s.Equals(start)).ToList());
+            {
+                var result = Build(mutation, end, list.Where(s => !s.Equals(start)));
                 if (result.Any())
                 {
                     List<string> chain = new List<string>(){start};
