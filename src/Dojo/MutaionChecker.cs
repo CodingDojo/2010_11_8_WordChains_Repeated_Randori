@@ -9,7 +9,7 @@ namespace Dojo
     {
         internal bool IsMutation(string p, string p_2)
         {
-            return true;
+            return p.Length == p_2.Length;
         }
     }
 }
